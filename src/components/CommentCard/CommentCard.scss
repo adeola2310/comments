@@ -1,0 +1,102 @@
+@import "../../styles/abstracts/variables";
+.card{
+  background-color: var(--white);
+  border-radius: 4px;
+  width: 50%;
+  margin: auto;
+
+
+
+  &__content{
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+  }
+  &__upvote{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+    max-height: 10%;
+    width: 10%;
+    background-color: var(--very-light-gray);
+    & .value{
+      color: var(--Moderate-blue);
+      font-weight: var(--font-weight-three);
+    }
+    & .increase, .decrease{
+      color: var(--light-grayish);
+      cursor: pointer;
+      font-weight: var(--font-weight-three);
+    }
+    & >span{
+      margin-top: .6rem;
+    }
+  }
+  &__details{
+    margin-left: 1rem;
+    &-action{
+      display: flex;
+      & >p{
+        cursor: pointer;
+         color: var(--Moderate-blue);
+        font-weight: var(--font-weight-three);
+      }
+    }
+    &-note{
+      //width: 50%;
+      line-height: 1.4;
+      margin-left: 1rem;
+      margin-top: 1.5rem;
+      & .replyto{
+        color: var(--Moderate-blue);
+      }
+      & >p{
+        color: var(--grayish-blue);
+      }
+    }
+    &-header{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      & .title{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-left: 1rem;
+
+        & .profile{
+          width: 15%;
+        }
+        & >h5{
+          color: var(--dark-blue);
+          font-size: var(--font-size);
+          margin-left: 1rem;
+        }
+        & >p{
+          color: var(--grayish-blue);
+          margin-left: 3rem;
+        }
+        & >span{
+          background-color: var(--Moderate-blue);
+          color: var(--white);
+          margin-left: .7rem;
+          border-radius: 3px;
+          padding: .1rem;
+        }
+      }
+    }
+  }
+}
+
+.scroll-replies{
+  overflow-y: scroll;
+}
+
+
+@media screen and (max-width: 500px){
+  .card{
+    width: 100%;
+  }
+}

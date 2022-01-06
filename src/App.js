@@ -1,23 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import "./styles/main.scss"
+import CommentCard from "./components/CommentCard/CommentCard";
+import {useEffect, useState} from "react";
+import {data} from "./data";
+import SendMessage from "./components/sendMessage/SendMessage";
 
 function App() {
+    const [responses, setResponses] = useState([]);
+
+
+    useEffect(()=>{
+        setResponses(data);
+    }, []);
+
+    console.log(responses)
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        {responses?.comments?.map((comm)=>(
+            <CommentCard
+                comm={comm}
+            />
+        ))}
+        <SendMessage
+            response={responses}
+        />
     </div>
   );
 }
