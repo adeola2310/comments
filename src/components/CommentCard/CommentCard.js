@@ -10,7 +10,7 @@ const CommentCard = ({comm})=>{
         setShowReply(true);
     }
 
-    console.log(comm)
+    console.log(comm);
 
     return (
         <>
