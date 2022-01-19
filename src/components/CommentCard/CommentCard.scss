@@ -35,6 +35,8 @@
     margin-left: 1rem;
     &-action{
       display: flex;
+      justify-content: space-between;
+      align-items: center;
       & >p{
         cursor: pointer;
          color: var(--Moderate-blue);
@@ -90,11 +92,15 @@
 
 .scroll-replies{
   overflow-y: scroll;
+  margin-left: 5rem;
+  & .card{
+    width: 47%;
+  }
 }
 
 
-@media screen and (max-width: 500px){
+@media screen and (max-width: 600px){
   .card{
-    width: 100%;
+    width: 10%;
   }
 }

@@ -1,6 +1,10 @@
 import React, {useState} from "react";
 import "./CommentCard.scss";
 import reply from "../../images/icon-reply.svg";
+import deleteIcon from "../../images/icon-delete.svg";
+import editIcon from "../../images/icon-edit.svg";
+import profile from "../../images/avatars/image-juliusomo.png"
+import SendMessage from "../sendMessage/SendMessage";
 
 
 const CommentCard = ({comm})=>{
@@ -9,8 +13,6 @@ const CommentCard = ({comm})=>{
     const showResplies = ()=>{
         setShowReply(true);
     }
-
-    console.log(comm);
 
     return (
         <>
@@ -39,7 +41,9 @@ const CommentCard = ({comm})=>{
                 </div>
             </div>
 
-            {comm.replies == 0 ? null :
+            {showReply && <SendMessage profile={profile}/>}
+
+            {comm.replies === 0 ? null :
              comm.replies.map((res)=>(
                  <div className="scroll-replies">
                      <div className="card" key={res.id}>
@@ -58,7 +62,8 @@ const CommentCard = ({comm})=>{
                                          <p>{res.createdAt}</p>
                                      </div>
                                      <div className="card__details-action">
-                                         <img src={reply} alt='reply'/><p onClick={()=>showResplies()}>Reply</p>
+                                         <img src={deleteIcon} alt='delete'/><p className="del" style={{color: "red", marginRight:'1rem'}}>Delete</p>
+                                         <img src={editIcon} alt='edit'/><p>Edit</p>
                                      </div>
                                  </div>
                                  <div className="card__details-note">

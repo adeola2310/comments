@@ -61,7 +61,7 @@
                         },
                         "username": "juliusomo"
                     }
-                }
+                },
             ]
         }
     ]

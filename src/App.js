@@ -13,8 +13,6 @@ function App() {
         setResponses(data);
     }, []);
 
-    console.log(responses)
-
   return (
     <div className="App">
         {responses?.comments?.map((comm)=>(
